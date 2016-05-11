@@ -1,0 +1,38 @@
+{
+  "name": "dasher-default-widgets",
+  "version": "0.0.1",
+  "description": "Default widget set for Dasher",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "gulp cp:widgets",
+    "preuninstall": "gulp rm:widgets"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dudeofawesome/dasher-default-widgets.git"
+  },
+  "keywords": [
+    "dasher",
+    "widget",
+    "widgets",
+    "dashboard",
+    "geektool",
+    "geek",
+    "tool",
+    "übersicth",
+    "ubersicht",
+    "uebersicht",
+    "overview"
+  ],
+  "author": "Louis Orleans <louis@0rleans.com> (http://0rleans.com)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dudeofawesome/dasher-default-widgets/issues"
+  },
+  "homepage": "https://github.com/dudeofawesome/dasher-default-widgets#readme",
+  "dependencies": {
+    "del": "2.2.0",
+    "gulp": "3.9.1"
+  }
+}
