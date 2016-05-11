@@ -1,0 +1,15 @@
+settings-window {
+    font-family: Roboto;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 100;
+
+    code {
+        text-shadow: 0 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}

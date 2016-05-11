@@ -1,0 +1,30 @@
+<div class="fe-forecast loading" style="display:flex; flex-direction:row;">
+
+    <div class="fe-currently" id="current-weather" style="display:flex; flex-direction:column;">
+        <!-- Top of Current Weather -->
+        <div style="display:flex; flex-direction:row;">
+            <div id="fe-current-icon" class="weather-icon big"></div>
+            <div style="display:flex; flex-direction:column;">
+                <div class="fe-temp">{{temp}}</div>
+                <div class="fe-temp-direction">{{tempDirection}}</div>
+            </div>
+        </div>
+        <!-- Bottom of Current Weather -->
+        <div class="fe-more-info" style="display:flex; flex-direction:column;">
+            <div class="fe-summary">{{summary}}</div>
+            <div class="fe-wind">{{wind}}</div>
+        </div>
+    </div>
+
+    <div class="days" style="display:flex; flex-direction:row;">
+        <div ng-repeat="day in days" ng-attr-id="{{'day' + $index}}" style="display:flex; flex-direction:column;">
+            <div class="day-text">{{day.text}}</div>
+            <div class="weather-icon">{{day.icon}}</div>
+            <div class="temp-range">
+                <div class="center-bar">
+                    <div class="bar" ng-style="day.style"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
