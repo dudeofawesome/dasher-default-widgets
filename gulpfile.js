@@ -1,3 +1,5 @@
+'use strict';
+
 const gulp = require('gulp');
 const del = require('del');
 const os = require('os');
@@ -18,15 +20,15 @@ gulp.task('cp:widgets', () => {
     if (!dasherFolder) {
         dasherFolder = determineWidgetFolder();
     }
-    gulp.src('./widgets/**/*').dest(`${dasherFolder}/widgets`);
+    gulp.src('./widgets/**/*')
+        .pipe(gulp.dest(`${dasherFolder}/widgets`));
 });
 
 gulp.task('rm:widgets', (callback) => {
     if (!dasherFolder) {
         dasherFolder = determineWidgetFolder();
     }
-    del([`${dasherFolder}/widgets/**/*`], {dryRun: true}).then((paths) => {
-        console.log(paths);
+    del([`${dasherFolder}/widgets`], {force: true}).then(() => {
         callback();
     });
 });
