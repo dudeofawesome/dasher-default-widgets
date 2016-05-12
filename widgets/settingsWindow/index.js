@@ -8,7 +8,7 @@ module.exports = ['$dasherSettings', ($dasherSettings) => {
         scope: {},
         styles: 'style.scss',
         controller: ($scope, $element) => {
-            $dasherSettings.get('demoSetting').then((setting) => {
+            $dasherSettings.get('demoSetting', undefined, undefined, true).then((setting) => {
                 $scope.demoSetting = setting;
             });
 
