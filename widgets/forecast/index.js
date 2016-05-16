@@ -76,7 +76,7 @@ module.exports = ['$dasherSettings', ($dasherSettings) => {
         styles: 'style.scss',
         controller: ($scope, $element, $http) => {
             let API_KEY = '<api_key>'; // Put your Forcast.io api key inside the quotes here          #
-            $dasherSettings.get('forecastIOapiKey', 'Forecast.IO API Key').then(apiKey => API_KEY = apiKey);
+            $dasherSettings.get('forecast', 'forecastIOapiKey', 'Forecast.IO API Key').then(apiKey => API_KEY = apiKey);
             const REFRESH_RATE = 120000; // Time in milliseconds between refreshes                     #
             let LAT = 'auto'; // Options are auto, or a valid latitude (auto doesn't always work)    #
             let LON = 'auto'; // Options are auto, or a valid longitude (auto doesn't always work)   #

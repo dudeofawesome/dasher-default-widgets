@@ -7,8 +7,8 @@ module.exports = ['$dasherSettings', ($dasherSettings) => {
         transclude: true,
         scope: {},
         styles: 'style.scss',
-        controller: ($scope, $element) => {
-            $dasherSettings.get('demoSetting', undefined, undefined, true).then((setting) => {
+        controller: ($scope) => {
+            $dasherSettings.get('settingsWindow', 'demoSetting', undefined, undefined, true).then((setting) => {
                 $scope.demoSetting = setting;
             });
 
@@ -23,10 +23,35 @@ module.exports = ['$dasherSettings', ($dasherSettings) => {
                 },
                 {
                     question: 'Email',
-                    key: 'email'
+                    key: 'email',
+                    type: 'email'
+                },
+                {
+                    question: 'Favorite widget dashboard',
+                    key: 'favoriteWidgetDashboard',
+                    type: 'spinner',
+                    options: [
+                        {
+                            text: 'Dasher',
+                            value: 'dasher1'
+                        },
+                        {
+                            text: 'Dasher',
+                            value: 'dasher2'
+                        },
+                        {
+                            text: 'Dasher',
+                            value: 'dasher3'
+                        }
+                    ]
+                },
+                {
+                    question: 'Password',
+                    key: 'password',
+                    type: 'password'
                 }
             ];
-            $dasherSettings.get(requestedQuestions).then((settings) => {
+            $dasherSettings.get('settingsWindow', requestedQuestions).then((settings) => {
                 $scope.demoSettings = settings;
             });
         },
